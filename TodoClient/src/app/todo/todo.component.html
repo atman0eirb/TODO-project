@@ -1,0 +1,92 @@
+<app-nav-bar ></app-nav-bar>
+<div class="Container">
+    <div class="MYLISTODO">
+        <div class="fill">
+            <form [formGroup]="TODO">
+                <label for="MISSION"> MISSION </label>
+                <input id="MISSION" type="text" formControlName="Mission" />
+
+                <label for="Date"> Date Limite </label>
+                <input id="Date" type="date" formControlName="Date" />
+
+                <label for="Description"> Description</label>
+                <textarea class="Description" id="Description" formControlName="Description"></textarea>
+
+                <div class="buttons">
+                    <button *ngIf="!selectedItemToupdate" type="submit" (click)="addMission(TODO.value)">
+                        ADD
+                    </button>
+                    <button *ngIf="selectedItemToupdate" type="submit"
+                        (click)="updateMission(TODO.value, selectedItemToupdate.id)">
+                        Update
+                    </button>
+                    <button class="cancel" *ngIf="selectedItemToupdate" type="submit" (click)="RestorOpacity()">
+                        Cancel
+                    </button>
+                </div>
+                <p class="error">{{ errorMessage }}</p>
+            </form>
+        </div>
+
+        <div *ngIf="DisplayDetails" class="DETAILS">
+            <div class="actualMission">
+                <h2>TODO : {{ TodoDetailelement.Mission }}</h2>
+                <h2>Date finale : {{ TodoDetailelement.Date }}</h2>
+                <h3>
+                    <p>{{ TodoDetailelement.Description }}</p>
+                </h3>
+            </div>
+
+            <div class="others">
+                <button class="previousMission"
+                    (click)="isvalidId(TodoDetailelement.id - 1) ? displayInfo(TodoDetailelement.id - 1) : true;">
+                    previous
+                </button>
+
+                <button class="nextMission"
+                    (click)=" isvalidId(TodoDetailelement.id + 1) ? displayInfo(TodoDetailelement.id + 1) : true;">
+                    next
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="!DisplayDetails" class="Liste">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Mission</th>
+                        <th>Date Limite</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="mission" *ngFor="let item of TODOList" [ngClass]="{
+              danger: isDateBetween(item.Date, 0, 3),
+              warning: isDateBetween(item.Date, 4, 7)
+            }">
+                        <th class="Id" (click)="displayInfo(item.id)">{{ item.id }}</th>
+                        <td class="Mission">{{ item.Mission }}</td>
+                        <td>{{ item.Date }}</td>
+                        <td class="buttons">
+                            <button (click)="UpdateAction(item)">
+                                <img class="update"
+                                    src="https://cdn1.iconfinder.com/data/icons/flat-web-browser/100/edit-button-512.png"
+                                    alt="edit button" />
+                            </button>
+                            <button (click)="DeleteAction(item.id)">
+                                <img class="delete" src="https://www.svgrepo.com/show/21045/delete-button.svg"
+                                    alt="delete button" />
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="areYouSure" *ngIf="selectedItemTodelete">
+        <h2>Are you sure ?</h2>
+        <button (click)="DeleteMission(selectedItemTodelete.id)">Yes</button>
+        <button (click)="RestorOpacity()">No</button>
+    </div>
+</div>

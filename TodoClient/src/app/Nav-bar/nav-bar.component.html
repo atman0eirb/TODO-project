@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <ul  class="navbar__list">
+      <li class="navbar__item"><img class="sidebar-icon" (click)="toggleSidebar()" src="https://static.thenounproject.com/png/4027495-200.png" alt="Sidebarr"
+        id="sidebar-icon"></li>
+      <li class="navbar__item"><a href="/logout" class="navbar__link"><img class="logout"  src="https://www.svgrepo.com/show/332449/logout.svg" alt="Log out"></a></li>
+    </ul>
+</nav>
+
+<div class="msb sidebar-hidden" id="msb">
+  <nav class="navbarside navbar-default" role="navigation">
+      <div class="side-menu-container">
+          <ul class="nav navbar-nav">
+              <li class="navbar__itemside"><a href="/home" class="navbar__link">Home</a></li>
+              <li class="navbar__itemside"><a href="/about" class="navbar__link">About</a></li> 
+          </ul>
+      </div>
+  </nav>
+</div>

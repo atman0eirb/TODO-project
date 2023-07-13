@@ -1,0 +1,218 @@
+.Container {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  p{
+    margin-left: 143px;
+  }
+  
+  .mission:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .error{
+    color: red;
+    margin-left: 418px;
+  }
+
+  .Liste{
+    border: 1px solid #ccc;
+  }
+
+  .mission.danger {
+    background-color: rgb(249 11 11 / 38%);
+  }
+
+  .mission.warning {
+    background-color: rgba(225, 249, 11, 0.38);
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly
+  }
+  .update{
+    width: 20px;
+    height: 20px;
+  }
+
+  .delete{
+    width: 20px;
+    height: 20px;
+  }
+
+  .areYouSure {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 22px;
+    color: white;
+    transform: translate(-50%, -50%);
+    background-color: rgb(226 136 1);
+    border: 1px solid rgb(226 136 1);
+    border-radius: 44px;
+    text-align: center;
+    opacity: 100%;
+    z-index: 999;
+    button{
+      margin: 10px;
+    }
+  }
+
+  
+
+  .MYLISTODO.opacity{
+    opacity: 50%;
+    .areYouSure{
+      opacity: 100%;
+    }
+  }
+
+
+
+  .Description {
+    width: 100%;
+    height: 150px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  button{
+    margin: 10px;
+    &.cancel{
+      background-color: rgb(163, 95, 95);
+      &:hover{
+        background-color: #a04845;
+      }
+    }
+  }
+}
+
+.Id:hover{
+  color: red;
+}
+
+.DETAILS {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.DETAILS h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.DETAILS h3 {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.DETAILS p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.actualMission {
+  margin-bottom: 20px;
+}
+
+.actualMission h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.actualMission h2:nth-child(2) {
+  font-size: 18px;
+  color: #888;
+}
+
+.actualMission h3 {
+  font-size: 16px;
+  color: #555;
+}
+
+.others {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previousMission,
+.nextMission,
+.back {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.previousMission:hover,
+.nextMission:hover,
+.back:hover {
+  background-color: #333;
+}
