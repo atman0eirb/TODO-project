@@ -16,7 +16,7 @@ The TodoClient folder contains the client-side code built with Angular.
 
 #### Launch
 
-To start the TodoClient application, run `npm start --prefix TodoClient`.
+To start the TodoClient application, run `ng serve`.
 
 Access the Todo application in your web browser at `http://localhost:4200`.
 
@@ -30,7 +30,7 @@ The TodoServer folder contains the server-side code built with NestJS.
 
 #### Launch
 
-To start the TodoServer application, run `npm start --prefix TodoServer`.
+To start the TodoServer application, run `nest start`.
 
 The server will be running on `http://localhost:3000`.
 
